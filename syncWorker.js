@@ -1,7 +1,6 @@
 import { Worker } from "bullmq";
-import { client } from "./redis.js"; // Redis client
-import { syncUserWalletTransactions } from "./syncWallet.js"; // Function to sync transactions
-
+import { client } from "./redis.js";
+import { syncUserWalletTransactions } from "./syncWallet.js";
 const startWorker = () => {
   console.log("Worker started =>");
   const worker = new Worker(

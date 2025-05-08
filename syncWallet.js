@@ -1,4 +1,3 @@
-// syncWallet.js
 import {
   getUserById,
   getLocalTransactions,
