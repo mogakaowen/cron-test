@@ -84,7 +84,6 @@ const worker = new Worker(
     connection: client,
     concurrency: 1, // control how many jobs per worker
     limiter: {
-      groupKey: "global",
       max: 2,
       duration: 1200,
     },

@@ -1,0 +1,27 @@
+name: DEV ENV
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Show values
+        run: |
+          echo "App: $APP_NAME"
+          echo "Region: $DEPLOY_REGION"
+          echo "API Key: $DEV_API_KEY"
+        env:
+          APP_NAME: ${{ vars.APP_NAME }}
+          DEPLOY_REGION: ${{ vars.DEPLOY_REGION }}
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
